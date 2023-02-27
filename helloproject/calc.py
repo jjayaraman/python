@@ -2,5 +2,5 @@ first = input("Enter first number : ")
 second = input("Enter second number :")
 total = float(first) + float(second)
 
-print(total)
+print("Total is : " +str(total))
 1
