@@ -16,6 +16,7 @@ print(bool("true"))
 print(bool("True"))
 print(bool("any string is true"))
 print(bool(""))
+
 # any number is true except 0
 print(bool(123))
 print(bool(0))
