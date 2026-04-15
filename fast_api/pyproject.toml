@@ -1,0 +1,10 @@
+[project]
+name = "fast_api"
+version = "0.1.0"
+description = "FastAPI samples"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.135.2",
+    "logfire[fastapi]>=4.30.0",
+]

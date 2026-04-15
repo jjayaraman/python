@@ -1,0 +1,65 @@
+common NumPy methods with their descriptions, organized by category.
+
+|--------------------------|-----------------------|-----------------------------------------------------|
+| **Category**             | **Method**            | **Description**                                      |
+|--------------------------|-----------------------|-----------------------------------------------------|
+| **Array Creation**       | `np.array()`          | Creates an array from a list or tuple.             |
+|                          | `np.zeros()`          | Creates an array filled with zeros.                |
+|                          | `np.ones()`           | Creates an array filled with ones.                 |
+|                          | `np.arange()`         | Creates an array with a range of values.           |
+|                          | `np.linspace()`       | Creates an array with evenly spaced values.        |
+|                          | `np.random.rand()`    | Creates an array of random numbers (0 to 1).       |
+|                          | `np.random.randn()`   | Creates an array of random numbers (normal dist.). |
+|                          | `np.eye()`            | Creates an identity matrix.                        |
+| **Array Inspection**     | `ndarray.shape`       | Returns the dimensions of the array.               |
+|                          | `ndarray.ndim`        | Returns the number of dimensions.                  |
+|                          | `ndarray.size`        | Returns the total number of elements.              |
+|                          | `ndarray.dtype`       | Returns the data type of array elements.           |
+| **Mathematical**         | `np.sum()`            | Computes the sum of array elements.                |
+|                          | `np.mean()`           | Computes the average of array elements.            |
+|                          | `np.var()`            | Computes the variance of array elements.           |
+|                          | `np.std()`            | Computes the standard deviation of array elements. |
+|                          | `np.min()`            | Finds the minimum value in the array.              |
+|                          | `np.max()`            | Finds the maximum value in the array.              |
+|                          | `np.prod()`           | Computes the product of array elements.            |
+|                          | `np.median()`         | Computes the median of array elements.             |
+| **Element-Wise Math**    | `np.sqrt()`           | Computes the square root of each element.          |
+|                          | `np.exp()`            | Computes the exponential (e^x) of each element.    |
+|                          | `np.log()`            | Computes the natural logarithm of each element.    |
+|                          | `np.sin()`            | Computes the sine of each element.                 |
+|                          | `np.cos()`            | Computes the cosine of each element.               |
+|                          | `np.abs()`            | Computes the absolute value of each element.       |
+|                          | `np.round()`          | Rounds each element to the nearest integer.        |
+| **Array Manipulation**   | `ndarray.reshape()`   | Changes the shape of the array.                    |
+|                          | `np.transpose()`      | Swaps axes (e.g., rows become columns).            |
+|                          | `ndarray.T`           | Shortcut for transpose.                            |
+|                          | `np.concatenate()`    | Joins arrays along an existing axis.               |
+|                          | `np.vstack()`         | Stacks arrays vertically (row-wise).               |
+|                          | `np.hstack()`         | Stacks arrays horizontally (column-wise).          |
+|                          | `ndarray.flatten()`   | Collapses the array into one dimension.            |
+|                          | `np.append()`         | Adds values to the end of an array.                |
+|                          | `np.resize()`         | Changes array size, repeating or truncating data.  |
+| **Linear Algebra**       | `np.dot()`            | Computes the dot product or matrix multiplication. |
+|                          | `np.linalg.inv()`     | Computes the inverse of a square matrix.           |
+|                          | `np.linalg.det()`     | Computes the determinant of a matrix.              |
+|                          | `np.linalg.eig()`     | Computes eigenvalues and eigenvectors.             |
+|                          | `np.matmul()`         | Performs matrix multiplication (similar to dot).   |
+| **Sorting/Searching**    | `np.sort()`           | Sorts array elements.                              |
+|                          | `np.argsort()`        | Returns indices that would sort the array.         |
+|                          | `np.argmax()`         | Returns index of the maximum value.                |
+|                          | `np.argmin()`         | Returns index of the minimum value.                |
+|                          | `np.where()`          | Returns indices where a condition is true.         |
+| **Statistical**          | `np.percentile()`     | Computes the nth percentile of array elements.     |
+|                          | `np.corrcoef()`       | Computes the Pearson correlation coefficient.      |
+| **Set Operations**       | `np.unique()`         | Returns unique elements of an array.               |
+|                          | `np.intersect1d()`    | Finds common elements between two arrays.          |
+|                          | `np.union1d()`        | Combines unique elements from two arrays.          |
+|--------------------------|-----------------------|----------------------------------------------------|
+
+
+### Notes
+- Many methods (e.g., `sum`, `mean`, `var`) accept an `axis` parameter to operate along rows (`axis=1`) or columns (`axis=0`) in multi-dimensional arrays.
+- Some are functions of the NumPy module (`np.`), while others are methods of the `ndarray` object (e.g., `arr.shape`).
+- This isn’t exhaustive—NumPy has hundreds of methods—but these are the most widely used.
+
+If you want details on any specific method or category, let me know!

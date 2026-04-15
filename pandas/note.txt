@@ -1,0 +1,72 @@
+Pandas is built on NumPy and is designed for data manipulation and analysis, primarily through its `Series` (1D) and `DataFrame` (2D) objects.
+Common Pandas methods with their descriptions, organized by category
+
+| **Category**             | **Method**              | **Description**                                           |
+|--------------------------|-------------------------|----------------------------------------------------------|
+| **Data Creation**        | `pd.Series()`           | Creates a 1D labeled array (Series).                    |
+|                          | `pd.DataFrame()`        | Creates a 2D tabular data structure (DataFrame).        |
+|                          | `pd.read_csv()`         | Reads a CSV file into a DataFrame.                      |
+|                          | `pd.read_excel()`       | Reads an Excel file into a DataFrame.                   |
+|                          | `pd.read_sql()`         | Reads a SQL query or table into a DataFrame.            |
+| **Data Inspection**      | `df.head()`             | Returns the first n rows of a DataFrame.                |
+|                          | `df.tail()`             | Returns the last n rows of a DataFrame.                 |
+|                          | `df.info()`             | Displays a summary of the DataFrame (types, non-nulls). |
+|                          | `df.shape`              | Returns the dimensions (rows, columns) of the DataFrame.|
+|                          | `df.describe()`         | Generates descriptive statistics (count, mean, etc.).   |
+|                          | `df.dtypes`             | Returns the data types of each column.                  |
+|                          | `df.columns`            | Returns the column names of the DataFrame.              |
+| **Mathematical/Stats**   | `df.sum()`              | Computes the sum of values (column-wise by default).    |
+|                          | `df.mean()`             | Computes the mean of values.                            |
+|                          | `df.var()`              | Computes the variance of values.                        |
+|                          | `df.std()`              | Computes the standard deviation of values.              |
+|                          | `df.min()`              | Finds the minimum value in each column.                 |
+|                          | `df.max()`              | Finds the maximum value in each column.                 |
+|                          | `df.median()`           | Computes the median of values.                          |
+|                          | `df.count()`            | Counts non-null values in each column.                  |
+| **Data Manipulation**    | `df.loc[]`              | Accesses rows/columns by labels.                        |
+|                          | `df.iloc[]`             | Accesses rows/columns by integer positions.             |
+|                          | `df.drop()`             | Removes specified rows or columns.                      |
+|                          | `df.rename()`           | Renames columns or index labels.                        |
+|                          | `df.sort_values()`      | Sorts the DataFrame by specified column(s).             |
+|                          | `df.sort_index()`       | Sorts the DataFrame by index.                           |
+|                          | `df.fillna()`           | Replaces missing values with a specified value.         |
+|                          | `df.dropna()`           | Removes rows or columns with missing values.            |
+|                          | `df.replace()`          | Replaces specific values with new ones.                 |
+| **Grouping/Aggregation** | `df.groupby()`          | Groups data by one or more columns for aggregation.     |
+|                          | `df.agg()`              | Applies aggregation functions (e.g., sum, mean) to groups.|
+|                          | `df.pivot_table()`      | Creates a pivot table with aggregated data.             |
+|                          | `df.apply()`            | Applies a function along an axis or to each element.    |
+| **Merging/Joining**      | `pd.concat()`           | Concatenates DataFrames/Series along an axis.           |
+|                          | `df.merge()`            | Merges DataFrames based on keys (like SQL joins).       |
+|                          | `df.join()`             | Joins DataFrames on index or key column.                |
+| **Filtering**            | `df.query()`            | Filters rows using a string expression.                 |
+|                          | `df.isin()`             | Checks if values are in a specified list.               |
+| **Data Transformation**  | `df.astype()`           | Converts the data type of a column.                     |
+|                          | `df.shift()`            | Shifts values up or down along an axis.                 |
+|                          | `df.diff()`             | Computes the difference between consecutive values.     |
+|                          | `df.cumsum()`           | Computes the cumulative sum of values.                  |
+|                          | `df.cumprod()`          | Computes the cumulative product of values.              |
+| **Missing Data**         | `df.isnull()`           | Returns a boolean mask for missing values.              |
+|                          | `df.notnull()`          | Returns a boolean mask for non-missing values.          |
+| **String Operations**    | `str.lower()`           | Converts strings in a Series to lowercase.              |
+|                          | `str.upper()`           | Converts strings in a Series to uppercase.              |
+|                          | `str.strip()`           | Removes leading/trailing whitespace from strings.       |
+|                          | `str.contains()`        | Checks if a pattern exists in strings.                  |
+| **Time Series**          | `pd.to_datetime()`      | Converts a column to datetime type.                     |
+|                          | `df.resample()`         | Resamples time series data (e.g., daily to monthly).    |
+|                          | `df.rolling()`          | Applies rolling window calculations (e.g., moving avg). |
+| **Exporting**            | `df.to_csv()`           | Writes the DataFrame to a CSV file.                     |
+|                          | `df.to_excel()`         | Writes the DataFrame to an Excel file.                  |
+|                          | `df.to_sql()`           | Writes the DataFrame to a SQL database.                 |
+| **Set Operations**       | `df.duplicated()`       | Identifies duplicate rows.                              |
+|                          | `df.drop_duplicates()`  | Removes duplicate rows.                                 |
+|                          | `df.unique()`           | Returns unique values in a Series.                      |
+
+---
+
+### Notes
+- **Axis**: Many methods (e.g., `sum`, `mean`) use `axis=0` (columns) or `axis=1` (rows) to specify direction.
+- **DataFrame vs. Series**: Methods like `sum` or `drop` work on DataFrames (2D) or Series (1D), with slight differences in behavior.
+- **Accessors**: String methods (e.g., `str.lower`) and time series methods (e.g., `dt.year`) require `.str` or `.dt` prefixes on Series.
+- This list focuses on core methods—Pandas has many more specialized ones (e.g., for categorical data or plotting).
+

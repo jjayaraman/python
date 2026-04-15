@@ -1,0 +1,25 @@
+_format_version: "3.0"
+_transform: true
+
+services:
+  - name: employee-api
+    url: http://app:80
+    routes:
+      - name: employees-route
+        strip_path: false
+        paths:
+          - /employees
+          - /health
+    plugins:
+      - name: key-auth
+        config:
+          key_names: [apikey]
+      - name: rate-limiting
+        config:
+          minute: 10
+          policy: local
+
+consumers:
+  - username: admin-user
+    keyauth_credentials:
+      - key: super-secret-key
