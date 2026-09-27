@@ -24,17 +24,16 @@ def getTodos():
     return {"todos": todos}
 
 
-@api.get("/todos/{id}")
+@api.get("/todos/{id}", response_model=Todo, status_code=status.HTTP_200_OK)
 def get_todo(id:int):
-    print(f"todo_id: ${id}")
+    print(f"todo_id: {id}")
     for todo in todos:
         if todo.id == id:
             print(todo)
             return todo
-        else:
-            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Not found")    
+    raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Not found")    
 
-@api.post("/todo")
+@api.post("/todos", status_code= status.HTTP_201_CREATED)
 def create_todo(todo:TodoCreate):
     id = max(todo.id for todo in todos) + 1
     # id = 10
@@ -44,12 +43,9 @@ def create_todo(todo:TodoCreate):
     print(f"new_todo: ${new_todo}")
 
     todos.append(new_todo)
-    return {
-        "status" : status.HTTP_201_CREATED,
-        "message": f"Todo added successfully. {new_todo}"
-    }
+    return new_todo
 
-@api.put("/todo/{id}")
+@api.put("/todos/{id}")
 def update_todo(id:int, newTodo:TodoCreate):
     for todo in todos:
         if todo.id == id:
@@ -65,16 +61,13 @@ def update_todo(id:int, newTodo:TodoCreate):
         "message": f"Update Failed. Todo not found"
     }
 
-@api.delete("/todo/{id}")
-def deelte_todo(id:int):
-    for todo in todos:
+@api.delete("/todos/{id}", status_code=status.HTTP_204_NO_CONTENT)
+def delete_todo(id:int):
+    for index, todo in enumerate(todos):
         if todo.id == id:
-            todos.remove(todo)
+            todos.pop(index)
             print("removed")
-            return {
-                "status" : status.HTTP_200_OK,
-                "message": f"Todo removed successfully."
-            }
+            return 
             
     return {
         "status" : status.HTTP_404_NOT_FOUND,
